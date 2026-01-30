@@ -76,8 +76,8 @@ local setup = function(char: Model)
 
     local rifle, rpg = getScripts(char);
 
-    if rifle then hook(filter(rifle, unpack(consts))); end;
-    if rpg then hook(filter(rpg, unpack(consts))); end;
+    if rifle then hook(filter(rifle, true, unpack(consts))); end;
+    if rpg then hook(filter(rpg, true, unpack(consts))); end;
 
     print("Set up!");
 end;
