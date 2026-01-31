@@ -3,8 +3,8 @@ local clonefunction = clonefunction or function(f: (...any) -> (...any)) return 
 local newcclosure = newcclosure or clonefunction;
 local executor = (identifyexecutor and select(2, pcall(identifyexecutor))) and identifyexecutor() or "Your executor";
 
-if not (hookfunction and (filtergc or getgc) and restorefunction and require) then
-    return error(executor .. " is missing " .. (not hookfunction and "hookfunction " or "") .. (not (filtergc and getgc) and "filtergc getgc " or "") .. (not restorefunction and "restorefunction " or "") .. (not require and "require" or ""));
+if not (hookfunction and (filtergc or getgc) and require) then
+    return error(executor .. " is missing " .. (not hookfunction and "hookfunction " or "") .. (not (filtergc and getgc) and "filtergc getgc " or "") .. (not require and "require" or ""));
 end;
 
 local RS: ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"));
