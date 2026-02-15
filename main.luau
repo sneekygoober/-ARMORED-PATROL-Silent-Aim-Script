@@ -19,7 +19,7 @@ local cam = workspace.CurrentCamera;
 
 local mouse = plr:GetMouse();
 
-local filter = loadstring(game:HttpGet("https://raw.githubusercontent.com/sneekygoober/sneeky-s-filtergc/refs/heads/main/main.luau"))();
+local filter: (script: (LocalScript|ModuleScript)?, strict: boolean, ...any) -> ((...any) -> (...any)) = loadstring(game:HttpGet("https://raw.githubusercontent.com/sneekygoober/sneeky-s-filtergc/refs/heads/main/main.luau"))();
 local consts = {"pcall", "FireServer", "print", "script", "Name", ":ToolSvcsSend; failed to send "};
 
 local getScripts = function(char: Model): (LocalScript?, LocalScript?)
