@@ -37,7 +37,7 @@ local getScripts = function(char: Model): (LocalScript?, LocalScript?)
 end;
 
 local getTarget = function(): BasePart
-    local cPart, cDistance = nil, 250;
+    local cPart, cDistance = nil, getgenv().fov or 250;
 
     for _, player: Player in next, Players:GetPlayers() do
         if player == plr or player.Team == plr.Team then continue; end;
@@ -60,6 +60,8 @@ local getTarget = function(): BasePart
 
     return cPart;
 end;
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/sneekygoober/sneeky-s-fov-lib/refs/heads/main/main.luau"))()(getgenv().fov or 250, getTarget);
 
 local hook = function(f: (any, any?, Vector3?) -> () | boolean)
     if not f then return; end;
